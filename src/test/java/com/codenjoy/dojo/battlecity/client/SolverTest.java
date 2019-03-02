@@ -22,6 +22,7 @@ package com.codenjoy.dojo.battlecity.client;
  * #L%
  */
 
+import com.codenjoy.dojo.battlecity.client.model.Board;
 import com.codenjoy.dojo.services.Direction;
 import com.codenjoy.dojo.client.Solver;
 import com.codenjoy.dojo.services.Dice;

@@ -1,10 +1,8 @@
-package com.codenjoy.dojo.battlecity.client;
+package com.codenjoy.dojo.battlecity.client.model;
 
 import com.codenjoy.dojo.services.Direction;
-import org.apache.commons.lang3.tuple.Pair;
 
 import java.awt.*;
-import java.util.Collection;
 import java.util.Map;
 
 public class BoardInfo {
@@ -13,5 +11,5 @@ public class BoardInfo {
     public Map<Point, Direction> Tanks;
     public Map<Point, Integer> TankCooldowns;
     public Map<Point, Double> PopularCells;
-    public Board Board;
+    public com.codenjoy.dojo.battlecity.client.model.Board Board;
 }

@@ -22,6 +22,7 @@ package com.codenjoy.dojo.battlecity.client;
  * #L%
  */
 
+import com.codenjoy.dojo.battlecity.client.model.Board;
 import com.codenjoy.dojo.battlecity.model.Elements;
 import org.junit.Before;
 import org.junit.Test;

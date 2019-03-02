@@ -1,4 +1,4 @@
-package com.codenjoy.dojo.battlecity.client;
+package com.codenjoy.dojo.battlecity.client.model;
 
 /*-
  * #%L

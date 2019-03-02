@@ -1,7 +1,7 @@
 package com.codenjoy.dojo.battlecity.client.interfaces;
 
-import com.codenjoy.dojo.battlecity.client.Board;
-import com.codenjoy.dojo.battlecity.client.BoardInfo;
+import com.codenjoy.dojo.battlecity.client.model.Board;
+import com.codenjoy.dojo.battlecity.client.model.BoardInfo;
 
 public interface IBoardAnalyzer {
 
