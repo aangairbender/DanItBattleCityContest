@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50e65d6a-7d01-46f2-94cc-f119dddadf08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/CellInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Tank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/utils/DirectionHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/BoardAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/BoardAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/GameStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/GameStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/interfaces/IBoardAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/interfaces/IBoardAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/BoardInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/BoardInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/model/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/model/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/MacroMapBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/MacroMapBuilder.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/BoardAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+            <state relative-caret-position="294">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#processNext#0;class#BoardAnalyzer#0" />
@@ -93,18 +83,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/utils/DirectionHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="62" lean-forward="true" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -116,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="64" column="54" lean-forward="true" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+            <state relative-caret-position="290">
+              <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
               <folding>
                 <element signature="e#3784#3785#0" expanded="true" />
                 <element signature="e#3827#3828#0" expanded="true" />
@@ -152,6 +130,23 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/MacroMapBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="753">
+              <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#clearMap#0;class#MacroMapBuilder#0" />
+                <element signature="method#calcDistToBecomeZero#0;class#MacroMapBuilder#0" />
+                <element signature="method#spreadAll#0;class#MacroMapBuilder#0" />
+                <element signature="method#spreadRook#0;class#MacroMapBuilder#0" />
+                <element signature="method#spreadRay#0;class#MacroMapBuilder#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -180,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/YourSolver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/interfaces/IMacroMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/interfaces/IMacroMapBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/MacroMapBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/interfaces/IMacroDecisionMaker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/interfaces/IPathFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/PathFinder.java" />
@@ -195,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/BoardInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/CellInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/BoardAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/MacroMapBuilder.java" />
       </list>
     </option>
   </component>
@@ -301,7 +296,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551560306752" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551562431759" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -397,17 +392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codenjoy/engine/1.0.28/engine-1.0.28.jar!/com/codenjoy/dojo/services/PointImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="e#299#300#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/LinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -469,18 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/MacroMapBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -584,16 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/GameStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="39" column="45" lean-forward="true" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/interfaces/IBoardAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -611,31 +573,6 @@
           <folding>
             <element signature="e#5493#5494#0" expanded="true" />
             <element signature="e#5553#5554#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="64" column="54" lean-forward="true" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
-          <folding>
-            <element signature="e#3784#3785#0" expanded="true" />
-            <element signature="e#3827#3828#0" expanded="true" />
-            <element signature="e#4240#4241#0" expanded="true" />
-            <element signature="e#4298#4299#0" expanded="true" />
-            <element signature="e#4068#4069#0" expanded="true" />
-            <element signature="e#4097#4098#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4203#4204#0" expanded="true" />
-            <element signature="e#4247#4248#0" expanded="true" />
-            <element signature="e#4293#4294#0" expanded="true" />
-            <element signature="e#4309#4310#0" expanded="true" />
-            <element signature="e#4338#4339#0" expanded="true" />
-            <element signature="e#4452#4453#0" expanded="true" />
-            <element signature="e#4487#4488#0" expanded="true" />
-            <element signature="e#4420#4421#0" expanded="true" />
-            <element signature="e#4472#4473#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -659,8 +596,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/BoardAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        <state relative-caret-position="294">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#processNext#0;class#BoardAnalyzer#0" />
@@ -670,6 +607,67 @@
             <element signature="method#removeDestroyedBullets#0;class#BoardAnalyzer#0" />
             <element signature="method#updateTanks#0;class#BoardAnalyzer#0" />
             <element signature="class#Graph#0;class#BoardAnalyzer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/GameStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="39" column="45" lean-forward="true" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codenjoy/engine/1.0.28/engine-1.0.28.jar!/com/codenjoy/dojo/services/PointImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/model/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+          <folding>
+            <element signature="e#3784#3785#0" expanded="true" />
+            <element signature="e#3827#3828#0" expanded="true" />
+            <element signature="e#4240#4241#0" expanded="true" />
+            <element signature="e#4298#4299#0" expanded="true" />
+            <element signature="e#4068#4069#0" expanded="true" />
+            <element signature="e#4097#4098#0" expanded="true" />
+            <element signature="e#4149#4150#0" expanded="true" />
+            <element signature="e#4203#4204#0" expanded="true" />
+            <element signature="e#4247#4248#0" expanded="true" />
+            <element signature="e#4293#4294#0" expanded="true" />
+            <element signature="e#4309#4310#0" expanded="true" />
+            <element signature="e#4338#4339#0" expanded="true" />
+            <element signature="e#4452#4453#0" expanded="true" />
+            <element signature="e#4487#4488#0" expanded="true" />
+            <element signature="e#4420#4421#0" expanded="true" />
+            <element signature="e#4472#4473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/battlecity/client/classes/MacroMapBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#clearMap#0;class#MacroMapBuilder#0" />
+            <element signature="method#calcDistToBecomeZero#0;class#MacroMapBuilder#0" />
+            <element signature="method#spreadAll#0;class#MacroMapBuilder#0" />
+            <element signature="method#spreadRook#0;class#MacroMapBuilder#0" />
+            <element signature="method#spreadRay#0;class#MacroMapBuilder#0" />
           </folding>
         </state>
       </provider>
