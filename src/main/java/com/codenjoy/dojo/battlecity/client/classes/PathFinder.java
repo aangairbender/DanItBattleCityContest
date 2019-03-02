@@ -5,7 +5,7 @@ import com.codenjoy.dojo.services.Direction;
 
 public class PathFinder implements IPathFinder {
 
-    public Direction findPathTo(int x, int y, int[][] heatMap, Direction needForShot) {
+    public Direction findPathTo(int x, int y, double[][] heatMap, Direction needForShot) {
         return null;
     }
 }

@@ -1,17 +1,49 @@
 package com.codenjoy.dojo.battlecity.client.classes;
 
-import com.codenjoy.dojo.battlecity.client.interfaces.IGameStrategy;
+import com.codenjoy.dojo.battlecity.client.interfaces.*;
 import com.codenjoy.dojo.battlecity.client.model.Board;
 import com.codenjoy.dojo.services.Dice;
-import com.codenjoy.dojo.services.Point;
+import com.codenjoy.dojo.services.Direction;
+
+import java.util.Vector;
 
 public class GameStrategy implements IGameStrategy {
 
-    public GameStrategy(Dice dice) {
+    private IBoardAnalyzer boardAnalyzer;
+    private IMacroMapBuilder macroMapBuilder;
+    private IMacroDecisionMaker macroDecisionMaker;
+    private IPathFinder pathFinder;
+    private IShooter shooter;
 
+    public GameStrategy(Dice dice) {
+        boardAnalyzer = new BoardAnalyzer();
+        macroMapBuilder = new MacroMapBuilder();
+        macroDecisionMaker = new MacroDecisionMaker();
+        pathFinder = new PathFinder();
+        shooter = new Shooter();
     }
 
     public String makeMove(Board board) {
-        return null;
+        boardAnalyzer.processNext(board);
+
+        var bestPos = macroDecisionMaker.findBestPosition(boardAnalyzer, macroMapBuilder);
+
+        var shootDirection = shooter.chooseShootDirection(new Vector<>());
+
+        var moveDirection = pathFinder.findPathTo(
+                bestPos.getX(),
+                bestPos.getY(),
+                macroMapBuilder.BuildHeatMap(
+                        boardAnalyzer.getBorderInfo(
+                                boardAnalyzer.getCurrentTick()
+                        )
+                ),
+                shootDirection);
+
+        String result = moveDirection.toString();
+        if (shootDirection == moveDirection)
+            result += ", " + Direction.ACT.toString();
+
+        return result;
     }
 }

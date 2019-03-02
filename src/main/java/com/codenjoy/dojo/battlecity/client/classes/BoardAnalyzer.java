@@ -10,6 +10,10 @@ public class BoardAnalyzer implements IBoardAnalyzer {
         return null;
     }
 
+    public int getCurrentTick() {
+        return 0;
+    }
+
     public void processNext(Board board) {
 
     }
