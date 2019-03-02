@@ -38,7 +38,7 @@ public class GameStrategy implements IGameStrategy {
                 bestPos.getX(),
                 bestPos.getY(),
                 macroMapBuilder.BuildHeatMap(
-                        boardAnalyzer.getBorderInfo(
+                        boardAnalyzer.getBoardInfo(
                                 boardAnalyzer.getCurrentTick()
                         )
                 ),

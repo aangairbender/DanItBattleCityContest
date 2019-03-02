@@ -5,7 +5,7 @@ import com.codenjoy.dojo.battlecity.client.model.BoardInfo;
 
 public interface IBoardAnalyzer {
 
-    BoardInfo getBorderInfo(int tick);
+    BoardInfo getBoardInfo(int tick);
     int getCurrentTick();
 
     void processNext(Board board);

@@ -23,6 +23,7 @@ package com.codenjoy.dojo.battlecity.model;
  */
 
 
+import com.codenjoy.dojo.services.Direction;
 import com.codenjoy.dojo.services.printer.CharElements;
 
 import java.util.ArrayList;
@@ -80,6 +81,10 @@ public enum Elements implements CharElements {
     public final char ch;
     int power;
 
+    public boolean isFree() {
+        return this == NONE || this == BANG  || this == CONSTRUCTION_DESTROYED;
+    }
+
     private static List<Elements> constructionsCache = null;
     public static Collection<Elements> getConstructions() {
         if (constructionsCache == null) {
@@ -133,6 +138,14 @@ public enum Elements implements CharElements {
 
     public boolean isBullet() {
         return this == Elements.BULLET;
+    }
+
+    public Direction getDirection() {
+        if (this.name().endsWith("_UP")) return Direction.UP;
+        if (this.name().endsWith("_RIGHT")) return Direction.RIGHT;
+        if (this.name().endsWith("_DOWN")) return Direction.DOWN;
+        if (this.name().endsWith("_LEFT")) return Direction.LEFT;
+        return Direction.STOP;
     }
 
     @Override

@@ -25,6 +25,7 @@ package com.codenjoy.dojo.battlecity.client.model;
 
 import com.codenjoy.dojo.battlecity.model.Elements;
 import com.codenjoy.dojo.client.AbstractBoard;
+import com.codenjoy.dojo.services.Direction;
 import com.codenjoy.dojo.services.Point;
 import com.codenjoy.dojo.services.PointImpl;
 import com.codenjoy.dojo.services.algs.DeikstraFindWay;
@@ -135,6 +136,18 @@ public class Board extends AbstractBoard<Elements> {
 
     public boolean isEnemyAt(int x, int y) {
         return getAt(x, y).isEnemy();
+    }
+
+    public boolean isFreeAt(int x, int y) {
+        return getAt(x, y).isFree();
+    }
+
+    public Direction getDirectionOf(int x, int y) {
+        return getAt(x, y).getDirection();
+    }
+
+    public static int distance(int x1, int y1, int x2, int y2) {
+        return Math.abs(x1 - x2) + Math.abs(y1 - y2);
     }
 
     @Override
