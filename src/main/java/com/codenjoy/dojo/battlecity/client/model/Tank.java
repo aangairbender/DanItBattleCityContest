@@ -6,4 +6,5 @@ public class Tank {
     public int x;
     public int y;
     public Direction lookDirection;
+    public boolean isMoving;
 }

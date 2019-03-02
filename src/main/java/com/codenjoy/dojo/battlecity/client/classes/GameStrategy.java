@@ -15,22 +15,19 @@ public class GameStrategy implements IGameStrategy {
     private IBoardAnalyzer boardAnalyzer;
     private IMacroMapBuilder macroMapBuilder;
     private IMacroDecisionMaker macroDecisionMaker;
-    private IPathFinder pathFinder;
-    private IShooter shooter;
     private Vector<Elements> a = new Vector<>();
 
     public GameStrategy(Dice dice) {
         boardAnalyzer = new BoardAnalyzer();
         macroMapBuilder = new MacroMapBuilder();
         macroDecisionMaker = new MacroDecisionMaker();
-        shooter = new Shooter();
     }
 
     public String makeMove(Board board) {
         boardAnalyzer.processNext(board);
         var boardInfo = boardAnalyzer.getBoardInfo();
         var heatMap = macroMapBuilder.BuildHeatMap(boardInfo);
-        pathFinder = new PathFinder(
+        var pathFinder = new PathFinder(
                 board.getMe().getX(),
                 board.getMe().getY(),
                 heatMap,
@@ -39,6 +36,7 @@ public class GameStrategy implements IGameStrategy {
 
         var bestPos = macroDecisionMaker.findBestPosition(pathFinder, heatMap, board.size());
 
+        var shooter = new Shooter(boardInfo);
         var shootDirection = shooter.chooseShootDirection();
 
         var moveDirection = pathFinder.findPathTo(
@@ -47,7 +45,7 @@ public class GameStrategy implements IGameStrategy {
                 shootDirection).getLeft();
 
         String result = moveDirection.toString();
-        if (shootDirection == moveDirection)
+        if (shootDirection != Direction.STOP && shootDirection == moveDirection)
             result += ", " + Direction.ACT.toString();
 
         return result;

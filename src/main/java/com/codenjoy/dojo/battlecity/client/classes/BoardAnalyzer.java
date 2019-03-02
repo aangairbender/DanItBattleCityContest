@@ -109,6 +109,10 @@ public class BoardAnalyzer implements IBoardAnalyzer {
             var tank = pair.getLeft();
             var newPos = pair.getRight();
 
+            var dx = newPos.getX() - tank.x;
+            var dy = newPos.getY() - tank.y;
+
+            tank.isMoving = Math.abs(dx) + Math.abs(dy) > 0;
             tank.x = newPos.getX();
             tank.y = newPos.getY();
             tank.lookDirection = board.getDirectionOf(tank.x, tank.y);
