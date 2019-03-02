@@ -75,24 +75,32 @@ public class Board extends AbstractBoard<Elements> {
     }
 
     public Point getMe() {
-        var me = get(Elements.TANK_UP,
+        if (isGameOver())
+            return new PointImpl();
+        return get(Elements.TANK_UP,
                 Elements.TANK_DOWN,
                 Elements.TANK_LEFT,
-                Elements.TANK_RIGHT);
-        if (me.size() == 0)
-            return new PointImpl(0, 0);
-        return me.get(0);
+                Elements.TANK_RIGHT).get(0);
     }
 
-    public List<Point> getEnemies() {
+    public List<Point> getAIEnemies() {
         return get(Elements.AI_TANK_UP,
                 Elements.AI_TANK_DOWN,
                 Elements.AI_TANK_LEFT,
-                Elements.AI_TANK_RIGHT,
-                Elements.OTHER_TANK_UP,
+                Elements.AI_TANK_RIGHT);
+    }
+
+    public List<Point> getPlayerEnemies() {
+        return get(Elements.OTHER_TANK_UP,
                 Elements.OTHER_TANK_DOWN,
                 Elements.OTHER_TANK_LEFT,
                 Elements.OTHER_TANK_RIGHT);
+    }
+
+    public List<Point> getEnemies() {
+        var enemies = getAIEnemies();
+        enemies.addAll(getPlayerEnemies());
+        return enemies;
     }
 
     public List<Point> getBullets() {
@@ -114,7 +122,19 @@ public class Board extends AbstractBoard<Elements> {
     }
 
     public boolean isBulletAt(int x, int y) {
-        return getAt(x, y).equals(Elements.BULLET);
+        return getAt(x, y).isBullet();
+    }
+
+    public boolean isAIEnemyAt(int x, int y) {
+        return getAt(x, y).isAIEnemy();
+    }
+
+    public boolean isPlayerEnemyAt(int x, int y) {
+        return getAt(x, y).isPlayerEnemy();
+    }
+
+    public boolean isEnemyAt(int x, int y) {
+        return getAt(x, y).isEnemy();
     }
 
     @Override

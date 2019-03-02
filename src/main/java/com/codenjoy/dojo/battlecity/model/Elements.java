@@ -25,6 +25,7 @@ package com.codenjoy.dojo.battlecity.model;
 
 import com.codenjoy.dojo.services.printer.CharElements;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -79,14 +80,59 @@ public enum Elements implements CharElements {
     public final char ch;
     int power;
 
-    private static List<Elements> result = null;
+    private static List<Elements> constructionsCache = null;
     public static Collection<Elements> getConstructions() {
-        if (result == null) {
-            result = Arrays.stream(values())
+        if (constructionsCache == null) {
+            constructionsCache = Arrays.stream(values())
                     .filter(e -> e.name().startsWith(CONSTRUCTION.name()))
                     .collect(toList());
         }
-        return result;
+        return constructionsCache;
+    }
+    public boolean isConstruction() {
+        return getConstructions().contains(this);
+    }
+
+    private static List<Elements> aiEnemiesCache = null;
+    public static Collection<Elements> getAIEnemies() {
+        if (aiEnemiesCache == null) {
+            aiEnemiesCache = Arrays.stream(values())
+                    .filter(e -> e.name().startsWith("AI_TANK"))
+                    .collect(toList());
+        }
+        return aiEnemiesCache;
+    }
+    public boolean isAIEnemy() {
+        return getAIEnemies().contains(this);
+    }
+
+    private static List<Elements> playerEnemiesCache = null;
+    public static Collection<Elements> getPlayerEnemies() {
+        if (playerEnemiesCache == null) {
+            playerEnemiesCache = Arrays.stream(values())
+                    .filter(e -> e.name().startsWith("OTHER_TANK"))
+                    .collect(toList());
+        }
+        return playerEnemiesCache;
+    }
+    public boolean isPlayerEnemy() {
+        return getPlayerEnemies().contains(this);
+    }
+
+    private static List<Elements> enemiesCache = null;
+    public static Collection<Elements> getEnemies() {
+        if (enemiesCache == null) {
+            enemiesCache = new ArrayList<>(getAIEnemies());
+            enemiesCache.addAll(getPlayerEnemies());
+        }
+        return enemiesCache;
+    }
+    public boolean isEnemy() {
+        return getEnemies().contains(this);
+    }
+
+    public boolean isBullet() {
+        return this == Elements.BULLET;
     }
 
     @Override

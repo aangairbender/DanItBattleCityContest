@@ -2,9 +2,12 @@ package com.codenjoy.dojo.battlecity.client.classes;
 
 import com.codenjoy.dojo.battlecity.client.interfaces.*;
 import com.codenjoy.dojo.battlecity.client.model.Board;
+import com.codenjoy.dojo.battlecity.model.Elements;
 import com.codenjoy.dojo.services.Dice;
 import com.codenjoy.dojo.services.Direction;
+import com.codenjoy.dojo.services.PointImpl;
 
+import java.util.Collection;
 import java.util.Vector;
 
 public class GameStrategy implements IGameStrategy {
@@ -14,6 +17,7 @@ public class GameStrategy implements IGameStrategy {
     private IMacroDecisionMaker macroDecisionMaker;
     private IPathFinder pathFinder;
     private IShooter shooter;
+    private Vector<Elements> a = new Vector<>();
 
     public GameStrategy(Dice dice) {
         boardAnalyzer = new BoardAnalyzer();
