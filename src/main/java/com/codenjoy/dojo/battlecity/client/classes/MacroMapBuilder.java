@@ -29,7 +29,7 @@ public class MacroMapBuilder implements IMacroMapBuilder {
         applyBullets();
         applyTanks();
 
-        applyPopularCeels();
+        applyPopularCells();
         applyWideSpots();
 
         return map;
@@ -55,46 +55,56 @@ public class MacroMapBuilder implements IMacroMapBuilder {
     }
     private void spreadAll(int x, int y, double b0, double q) {
         int maxDist = calcDistToBecomeZero(b0, q);
-        for (int i = 0; i < sz; ++i)
-            for (int j = 0; j < sz; ++j)
+        for (int i = -maxDist; i <= maxDist; ++i)
+            for (int j = -maxDist; j <= maxDist; ++j)
             {
-                var dist = Board.distance(i, j, x, y);
+                int i1 = x + i;
+                int j1 = y + j;
+                var dist = Board.distance(i1, j1, x, y);
                 if (dist > maxDist)
                     continue;
-                addHeat(x, y, b0, q, dist);
+                addHeat(i1, j1, b0, q, dist);
             }
     }
     private void spreadRook(int x, int y, double b0, double q) {
         int maxDist = calcDistToBecomeZero(b0, q);
         for (int i = 0; i < sz; ++i)
-            for (int j = 0; j < sz; ++j)
             {
-                var dist = Board.distance(i, j, x, y);
+                var dist = Board.distance(i, y, x, y);
                 if (dist > maxDist)
                     continue;
-                int dx = i - x;
-                int dy = j - y;
-                if (dx * dy != 0)
-                    continue;
-                addHeat(x, y, b0, q, dist);
+                addHeat(i, y, b0, q, dist);
             }
+        for (int j = 0; j < sz; ++j)
+        {
+            var dist = Board.distance(x, j, x, y);
+            if (dist > maxDist)
+                continue;
+            addHeat(x, j, b0, q, dist);
+        }
     }
     private void spreadRay(int x, int y, Direction dir, double b0, double q) {
         int maxDist = calcDistToBecomeZero(b0, q);
         for (int i = 0; i < sz; ++i)
-            for (int j = 0; j < sz; ++j)
-            {
-                var dist = Board.distance(i, j, x, y);
-                if (dist > maxDist)
-                    continue;
-                int dx = i - x;
-                int dy = j - y;
-                if (dx * dy != 0)
-                    continue;
-                if (DirectionHelper.pointToDirection(new PointImpl(dx, dy)) != dir)
-                    continue;
-                addHeat(x, y, b0, q, dist);
-            }
+        {
+            var dist = Board.distance(i, y, x, y);
+            if (dist > maxDist)
+                continue;
+            var dx = i - x;
+            if (DirectionHelper.pointToDirection(new PointImpl(dx, 0)) != dir)
+                continue;
+            addHeat(i, y, b0, q, dist);
+        }
+        for (int j = 0; j < sz; ++j)
+        {
+            var dist = Board.distance(x, j, x, y);
+            if (dist > maxDist)
+                continue;
+            var dy = j - y;
+            if (DirectionHelper.pointToDirection(new PointImpl(0, dy)) != dir)
+                continue;
+            addHeat(x, j, b0, q, dist);
+        }
     }
 
     private void applyBullets() {
@@ -111,7 +121,7 @@ public class MacroMapBuilder implements IMacroMapBuilder {
         }
     }
 
-    private void applyPopularCeels() {
+    private void applyPopularCells() {
         int totalVisits = 0;
         for (int i = 0; i < sz; ++i)
             for (int j = 0; j < sz; ++j)

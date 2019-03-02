@@ -27,12 +27,8 @@ public class GameStrategy implements IGameStrategy {
         boardAnalyzer.processNext(board);
         var boardInfo = boardAnalyzer.getBoardInfo();
         var heatMap = macroMapBuilder.BuildHeatMap(boardInfo);
-        var pathFinder = new PathFinder(
-                board.getMe().getX(),
-                board.getMe().getY(),
-                heatMap,
-                board.size()
-        );
+
+        var pathFinder = new PathFinder(boardInfo);
 
         var bestPos = macroDecisionMaker.findBestPosition(pathFinder, heatMap, board.size());
 

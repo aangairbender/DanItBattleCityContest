@@ -37,4 +37,14 @@ public class DirectionHelper {
     public static Collection<Direction> getBasicDirections() {
         return Arrays.asList(Direction.UP, Direction.RIGHT, Direction.DOWN, Direction.LEFT);
     }
+
+    public static int getX(Direction d) {
+        var p = directionToPoint(d);
+        return p.getX();
+    }
+
+    public static int getY(Direction d) {
+        var p = directionToPoint(d);
+        return p.getY();
+    }
 }
