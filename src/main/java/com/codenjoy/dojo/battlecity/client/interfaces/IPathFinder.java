@@ -1,7 +1,8 @@
 package com.codenjoy.dojo.battlecity.client.interfaces;
 
 import com.codenjoy.dojo.services.Direction;
+import org.apache.commons.lang3.tuple.Pair;
 
 public interface IPathFinder {
-    Direction findPathTo(int x, int y, double[][] heatMap, Direction needForShot);
+    Pair<Direction, Double> findPathTo(int x, int y, Direction needForShot);
 }

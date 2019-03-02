@@ -23,26 +23,28 @@ public class GameStrategy implements IGameStrategy {
         boardAnalyzer = new BoardAnalyzer();
         macroMapBuilder = new MacroMapBuilder();
         macroDecisionMaker = new MacroDecisionMaker();
-        pathFinder = new PathFinder();
         shooter = new Shooter();
     }
 
     public String makeMove(Board board) {
         boardAnalyzer.processNext(board);
+        var boardInfo = boardAnalyzer.getBoardInfo();
+        var heatMap = macroMapBuilder.BuildHeatMap(boardInfo);
+        pathFinder = new PathFinder(
+                board.getMe().getX(),
+                board.getMe().getY(),
+                heatMap,
+                board.size()
+        );
 
-        var bestPos = macroDecisionMaker.findBestPosition(boardAnalyzer, macroMapBuilder);
+        var bestPos = macroDecisionMaker.findBestPosition(pathFinder, heatMap, board.size());
 
-        var shootDirection = shooter.chooseShootDirection(new Vector<>());
+        var shootDirection = shooter.chooseShootDirection();
 
         var moveDirection = pathFinder.findPathTo(
                 bestPos.getX(),
                 bestPos.getY(),
-                macroMapBuilder.BuildHeatMap(
-                        boardAnalyzer.getBoardInfo(
-                                boardAnalyzer.getCurrentTick()
-                        )
-                ),
-                shootDirection);
+                shootDirection).getLeft();
 
         String result = moveDirection.toString();
         if (shootDirection == moveDirection)

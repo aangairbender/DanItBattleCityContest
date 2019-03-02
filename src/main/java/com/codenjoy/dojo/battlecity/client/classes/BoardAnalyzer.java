@@ -30,12 +30,12 @@ public class BoardAnalyzer implements IBoardAnalyzer {
         return history.getFirst();
     }
 
-    public BoardInfo getBoardInfo(int tick) {
+    public BoardInfo getBoardInfo() {
         var info = new BoardInfo();
         info.Board = board;
         info.Bullets = bullets;
         info.Tanks = tanks;
-        info.Tick = tick;
+        info.Tick = currentTick;
         info.Size = board.size();
         info.Cells = cells;
         return info;
